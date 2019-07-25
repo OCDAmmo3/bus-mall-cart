@@ -8,18 +8,14 @@ function populateForm() {
   
   //TODO: Add an <option> tag inside the form's select for each product
   var selectElement = document.getElementById('items');
-  for (var i in Product.allProducts) {
-    
-    var select = document.getElementById("selectProduct"); 
-    var options = ['bag', 'banana', 'bathroom', 'boots', 'breakfast', 'bubblegum', 'chair', 'cthulhu', 'dog-duck', 'dragon', 'pen', 'pet-sweep', 'scissors', 'shark', 'sweep', 'tauntaun', 'unicorn', 'usb', "water-can", 'wine-glass']; 
 
-    var opt = options[i];
-    var el = document.createElement("option");
-    el.textContent = opt;
-    el.value = opt;
-    select.appendChild(el);
-}​
+  for (var i in Product.allProducts) {
+        var opt = Product.allProducts[i].name;
+        var el = document.createElement("option");
+        el.textContent = opt;
+        selectElement.appendChild(el);
   }
+}
 
 
 
@@ -29,7 +25,7 @@ function populateForm() {
 function handleSubmit(event) {
 
   // TODO: Prevent the page from reloading
-  preventDefault();
+  event.preventDefault();
   // Do all the things ...
   addSelectedItemToCart();
   saveCartToLocalStorage();
