@@ -98,8 +98,8 @@ input[type=submit] {
     float:right;
     animation-fill-mode: backwards;
     animation-name: shoop;
-    animation-duration: 1s;
-    animation-timing-function: linear;
+    animation-duration: .5s;
+    animation-timing-function: ease;
     animation-delay: 0s;
     animation-iteration-count: 1;
 }
