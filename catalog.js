@@ -11,7 +11,7 @@ function populateForm() {
   for (var i in Product.allProducts) {
     
     var select = document.getElementById("selectProduct"); 
-    var options = []; 
+    var options = ['bag', 'banana', 'bathroom', 'boots', 'breakfast', 'bubblegum', 'chair', 'cthulhu', 'dog-duck', 'dragon', 'pen', 'pet-sweep', 'scissors', 'shark', 'sweep', 'tauntaun', 'unicorn', 'usb', "water-can", 'wine-glass']; 
 
     var opt = options[i];
     var el = document.createElement("option");
