@@ -30,11 +30,14 @@ function clearCart() {
   // TODONE: Create a TR
 function showCart() {
   var salesTable = document.getElementById("cart");
-  var newRow = document.createElement("trow");
+  var newRow = document.createElement("tr");
   newRow.setAttribute("id", Cart.name);
   salesTable.appendChild(newRow);
 
-  
+  var salesTotal = document.getElementById(Cart.name);
+  var itemName = document.createElement("td");
+  itemName.textContent = options.name;
+  salesTotal.appendChild(itemName);
   // TODO: Create a TD for the delete link, quantity,  and the item
   // TODO: Add the TR to the TBODY and each of the TD's to the TR
 
