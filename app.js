@@ -4,7 +4,11 @@
 
 // TODO: Create a "Cart" constructor (named Cart) that has item and quantity
 // properties, and builds an array of items as you create instances
-
+var Cart = function(item, quantity){
+    this.item = item;
+    this.quantity = quantity;
+    this.productArray = [];
+}
 
 
 // Product Contructor
@@ -16,26 +20,26 @@ var Product = function(filePath, name) {
 Product.allProducts = [];
 
 function generateCatalog() {
-  new Product('assets/bag.jpg', 'Bag');
-  new Product('assets/banana.jpg', 'Banana');
-  new Product('assets/bathroom.jpg', 'Bathroom');
-  new Product('assets/boots.jpg', 'Boots');
-  new Product('assets/breakfast.jpg', 'Breakfast');
-  new Product('assets/bubblegum.jpg', 'Bubblegum');
-  new Product('assets/chair.jpg', 'Chair');
-  new Product('assets/cthulhu.jpg', 'Cthulhu');
-  new Product('assets/dog-duck.jpg', 'Dog-Duck');
-  new Product('assets/dragon.jpg', 'Dragon');
-  new Product('assets/pen.jpg', 'Pen');
-  new Product('assets/pet-sweep.jpg', 'Pet Sweep');
-  new Product('assets/scissors.jpg', 'Scissors');
-  new Product('assets/shark.jpg', 'Shark');
-  new Product('assets/sweep.png', 'Sweep');
-  new Product('assets/tauntaun.jpg', 'Taun-Taun');
-  new Product('assets/unicorn.jpg', 'Unicorn');
-  new Product('assets/usb.gif', 'USB');
-  new Product('assets/water-can.jpg', 'Water Can');
-  new Product('assets/wine-glass.jpg', 'Wine Glass');
+  new Product('images/bag.jpg', 'Bag');
+  new Product('images/banana.jpg', 'Banana');
+  new Product('images/bathroom.jpg', 'Bathroom');
+  new Product('images/boots.jpg', 'Boots');
+  new Product('images/breakfast.jpg', 'Breakfast');
+  new Product('images/bubblegum.jpg', 'Bubblegum');
+  new Product('images/chair.jpg', 'Chair');
+  new Product('images/cthulhu.jpg', 'Cthulhu');
+  new Product('images/dog-duck.jpg', 'Dog-Duck');
+  new Product('images/dragon.jpg', 'Dragon');
+  new Product('images/pen.jpg', 'Pen');
+  new Product('images/pet-sweep.jpg', 'Pet Sweep');
+  new Product('images/scissors.jpg', 'Scissors');
+  new Product('images/shark.jpg', 'Shark');
+  new Product('images/sweep.png', 'Sweep');
+  new Product('images/tauntaun.jpg', 'Taun-Taun');
+  new Product('images/unicorn.jpg', 'Unicorn');
+  new Product('images/usb.gif', 'USB');
+  new Product('images/water-can.jpg', 'Water Can');
+  new Product('images/wine-glass.jpg', 'Wine Glass');
 }
 
 // Initialize the app by creating the big list of products with images and names
