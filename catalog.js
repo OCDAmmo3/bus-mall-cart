@@ -24,21 +24,28 @@ function populateForm() {
 // so that it shows the # of items in the cart and a quick preview of the cart itself.
 function handleSubmit(event) {
 
+
+
+
   // TODO: Prevent the page from reloading
   event.preventDefault();
-  // Do all the things ...
+  
   addSelectedItemToCart();
+  
   saveCartToLocalStorage();
+  
+}
   updateCounter();
   updateCartPreview();
 
-}
+
 
 // TODO: Add the selected item and quantity to the cart
 function addSelectedItemToCart() {
   // TODO: suss out the item picked from the select list
   // TODO: get the quantity
   // TODO: using those, create a new Cart item instance
+  event.addEventListener('click', handleSubmit)
 }
 
 // TODO: Save the contents of the cart to Local Storage
