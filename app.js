@@ -7,9 +7,14 @@
 var Cart = function(item, quantity){
     this.item = item;
     this.quantity = quantity;
-    this.productArray = [];
-}
+    Cart.all.push(this);
+  }
 
+Cart.all = [];
+
+Cart.load = function() {
+  Cart.all = JSON.parse(localStorage["cart"]);
+}
 
 // Product Contructor
 var Product = function(filePath, name) {
@@ -44,3 +49,4 @@ function generateCatalog() {
 
 // Initialize the app by creating the big list of products with images and names
 generateCatalog();
+Cart.load();
