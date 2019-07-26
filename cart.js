@@ -19,9 +19,8 @@ function renderCart() {
 // Table id = "cart"
 // TODO: Remove all of the rows (tr) in the cart table (tbody)
 function clearCart() {
-    for(var i = document.getElementById("cart").rows.length; i > 0; i--){
-        document.getElementById("cart").deleteRow(i-1);
-    }
+  var tbody = document.getElementsByTagName("tbody")[0]
+  tbody.innerHTML = "";
 }
 
 // TODO: Fill in the <tr>'s under the <tbody> for each item in the cart
@@ -29,22 +28,43 @@ function clearCart() {
   // TODONE: Iterate over the items in the cart
   // TODONE: Create a TR
 function showCart() {
-  var salesTable = document.getElementById("cart");
+  Cart.forEach(product => {
+    var salesTable = document.getElementsByTagName("tbody")
+  
+  var salesTable = document.getElementsByTagName("tbody")[0];
   var newRow = document.createElement("tr");
-  newRow.setAttribute("id", Cart.name);
+  newRow.setAttribute("id", Cart[0].item);
   salesTable.appendChild(newRow);
 
-  var salesTotal = document.getElementById(Cart.name);
+  var salesTotal = document.getElementById(product.item);
+
+  var deleteButton = document.createElement("td");
+  deleteButton.textContent = "X";
+  deleteButton.addEventListener("click", removeItemFromCart);
+  deleteButton.setAttribute("id", product.item);
+  salesTotal.appendChild(deleteButton);
+
   var itemName = document.createElement("td");
-  itemName.textContent = options.name;
+  itemName.textContent = product.item;
   salesTotal.appendChild(itemName);
+  var quantity = document.createElement("td");
+  quantity.textContent = Cart[0].quantity;
+  salesTotal.appendChild(quantity);
   // TODO: Create a TD for the delete link, quantity,  and the item
   // TODO: Add the TR to the TBODY and each of the TD's to the TR
-
+  });
 }
 
 function removeItemFromCart(event) {
-    document.getElementById("cart").deleteRow(0);
+  for(var i in Cart){
+    if(Cart.item === event.target.id){
+      Cart.splice(i, 1);
+      localStorage["cart"] = JSON.stringify(cart);
+      renderCart();
+      break;
+    }
+  };
+    // document.getElementById("cart").deleteRow(0);
   // TODO: When a delete link is clicked, rebuild the Cart array without that item
   // TODO: Save the cart back to local storage
   // TODO: Re-draw the cart table

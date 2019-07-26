@@ -2,15 +2,16 @@
 font-family: 'Darker Grotesque', sans-serif;
 font-family: 'Lobster', cursive;
 */
+* {
+    text-align:center;
+}
 html {
     font-size:30px;
 }
 body {
     background-color:skyblue;
-    position:absolute;
     font-size:1rem;
-    left:40px;
-    top:40px;
+    margin-top:30px;
 }
 
 h1 {
@@ -58,6 +59,10 @@ form {
     padding:10px;
     border:solid black 1px;
     border-radius:3px;
+    max-width:60%;
+    box-sizing:border-box;
+    margin-left:20%;
+    margin-right:20%;
 }
 
 legend {
@@ -73,6 +78,10 @@ legend {
     border:solid black 1px;
 }
 
+#quantity {
+    text-align:left;
+}
+
 label {
     font-family: "Darker Grotesque", sans-serif;
 }
@@ -86,6 +95,7 @@ input {
 
 footer {
     position:fixed;
+    font-size:.7rem;
     bottom:10px;
     left:10px;
 }
@@ -109,6 +119,6 @@ input[type=submit] {
         transform: translate(0) scale(1);
     }
     100% {
-        transform: translate(-800px,-300px) scale(0);
+        transform: translate(-360px,-300px) scale(0);
     }
 }

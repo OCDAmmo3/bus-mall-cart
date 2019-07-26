@@ -23,9 +23,8 @@ function populateForm() {
 // object, save the whole thing back to local storage and update the screen
 // so that it shows the # of items in the cart and a quick preview of the cart itself.
 function handleSubmit(event) {
-
-  // TODO: Prevent the page from reloading
   event.preventDefault();
+
   // Do all the things ...
   addSelectedItemToCart();
   saveCartToLocalStorage();
@@ -39,15 +38,21 @@ function addSelectedItemToCart() {
   // TODO: suss out the item picked from the select list
   // TODO: get the quantity
   // TODO: using those, create a new Cart item instance
+  var selectedItem = document.getElementById("items").value;
+  var quantity = document.getElementById("quantity").value;
+  new Cart(selectedItem, quantity);
 }
 
 // TODO: Save the contents of the cart to Local Storage
 function saveCartToLocalStorage() {
-
+  localStorage["cart"] = JSON.stringify(Cart.all);
 }
 
 // TODO: Update the cart count in the header nav with the number of items in the Cart
-function updateCounter() {}
+function updateCounter() {
+  var counter = document.getElementById("itemCount");
+  counter.textContent = Cart.all.length;
+}
 
 // TODO: As you add items into the cart, show them (item & quantity) in the cart preview div
 function updateCartPreview() {
